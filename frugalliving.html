@@ -1,0 +1,1411 @@
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Frugal Mom's $200 Monthly Grocery Strategy</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap">
+<style>
+/* Bright, rounded, family-friendly. One reading column on every screen size.
+   Text is justified and hyphenated; tables and the shopping sheet scroll inside their own boxes. */
+:root {
+  --bg: #FFF8EC;
+  --surface: #FFFFFF;
+  --surface-2: #FFF1D6;
+  --fg: #2A2140;
+  --muted: #5B5275;
+  --accent: #D6336C;
+  --on-accent: #FFFFFF;
+  --link: #B0245A;
+  --accent-2: #0F9C92;
+  --rule: #F2DDB4;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1E1833;
+    --surface: #2A2246;
+    --surface-2: #362C57;
+    --fg: #FFF4E0;
+    --muted: #CFC6E6;
+    --accent: #FF7FA0;
+    --on-accent: #2A0F1E;
+    --link: #FF9DB8;
+    --accent-2: #5FE0D6;
+    --rule: #463B6B;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1E1833;
+  --surface: #2A2246;
+  --surface-2: #362C57;
+  --fg: #FFF4E0;
+  --muted: #CFC6E6;
+  --accent: #FF7FA0;
+  --on-accent: #2A0F1E;
+  --link: #FF9DB8;
+  --accent-2: #5FE0D6;
+  --rule: #463B6B;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  padding-block: 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+img { max-width: 100%; }
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-block: 16px 64px;
+  min-width: 0;
+}
+@media (min-width: 900px) {
+  body { font-size: 18px; }
+  .wrap { max-width: 800px; }
+}
+
+/* Chapter menu */
+.toc { margin: 0 0 12px; }
+.toc summary {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--accent);
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  padding: 8px 16px;
+}
+.toc summary::-webkit-details-marker { display: none; }
+.toc summary:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 3px; }
+.toc ol {
+  list-style: none;
+  padding: 12px 18px 14px;
+  margin: 10px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 2px 18px;
+  background: var(--surface);
+  border-radius: 18px;
+  border: 2px solid var(--rule);
+}
+.toc li { margin: 0; }
+.toc li a {
+  display: block;
+  padding: 5px 0;
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.35;
+}
+.toc li a:hover, .toc li a:focus-visible { color: var(--accent); }
+.toc .part {
+  grid-column: 1 / -1;
+  font-family: "Baloo 2", "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--accent-2);
+  padding: 10px 0 2px;
+}
+
+/* Type */
+h1, h2, h3 { font-family: "Baloo 2", "Nunito", system-ui, sans-serif; text-wrap: balance; }
+h1 {
+  font-weight: 800;
+  font-size: clamp(36px, 9vw, 58px);
+  line-height: 1.02;
+  margin: 0 0 14px;
+}
+h2 {
+  font-weight: 800;
+  font-size: clamp(28px, 7vw, 38px);
+  line-height: 1.1;
+  margin: 0 0 12px;
+}
+h3 {
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 1.25;
+  color: var(--accent);
+  margin: 24px 0 8px;
+}
+h4 {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 18px 0 6px;
+  font-weight: 800;
+}
+p, li, blockquote p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  overflow-wrap: break-word;
+}
+p { margin: 0 0 14px; }
+ul, ol { margin: 0 0 16px; padding-left: 22px; }
+li { margin-bottom: 6px; }
+a { color: var(--link); text-underline-offset: 3px; font-weight: 700; }
+strong { font-weight: 800; }
+
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 800;
+  margin: 0 0 8px;
+  text-align: left;
+}
+.lede {
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+/* Sections: one flowing column, light dividers, no big gaps */
+.page {
+  padding-block: 26px;
+  border-top: 3px dotted var(--rule);
+}
+.page:first-of-type { border-top: 0; padding-top: 12px; }
+.chapter-head { margin: 0 0 10px; }
+.chapter-head .num {
+  display: inline-block;
+  font-family: "Baloo 2", "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  background: #FFD65C;
+  color: #2A2140;
+  padding: 3px 14px;
+  border-radius: 999px;
+  margin: 0 0 10px;
+}
+
+/* Cover */
+.cover {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-radius: 24px;
+  padding: 28px 22px 24px;
+  border-top: 0;
+  margin-top: 4px;
+}
+.cover h1 { color: var(--on-accent); }
+.cover .eyebrow { color: var(--on-accent); opacity: 0.9; }
+.cover .author { font-size: 18px; margin: 0 0 14px; font-weight: 600; }
+.cover .author b { font-weight: 800; }
+.cover .lede { color: var(--on-accent); opacity: 0.95; margin-bottom: 16px; }
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+.meta-row span {
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+
+/* Quick link to the shopping list at the top */
+.quick-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  background: #FFD65C;
+  color: #2A2140;
+  font-family: "Baloo 2", "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 10px 20px;
+}
+.quick-link:hover, .quick-link:focus-visible { background: #FFE07F; outline: 3px solid #FFFFFF; outline-offset: 2px; }
+
+/* Callouts */
+.note {
+  background: var(--surface-2);
+  border-radius: 18px;
+  padding: 16px 18px;
+  margin: 18px 0;
+}
+.note h4 { margin-top: 0; color: var(--accent); }
+.note p:last-child, .note ul:last-child { margin-bottom: 0; }
+
+blockquote {
+  margin: 18px 0;
+  padding: 14px 18px;
+  background: var(--surface);
+  border-left: 6px solid var(--accent-2);
+  border-radius: 14px;
+}
+blockquote p {
+  font-family: "Baloo 2", "Nunito", sans-serif;
+  font-size: 19px;
+  line-height: 1.4;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+blockquote footer { font-size: 14px; color: var(--muted); text-align: left; }
+.src {
+  font-size: 14px;
+  color: var(--muted);
+  margin: -4px 0 18px;
+  text-align: left;
+}
+.src a { color: var(--muted); }
+
+/* Figures: bright cards with fixed colors so they read in both themes */
+.figures {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+  margin: 18px 0;
+}
+.figure {
+  border-radius: 20px;
+  padding: 16px 18px;
+  min-width: 0;
+  background: #FFD65C;
+  color: #2A2140;
+}
+.figure:nth-child(3n+2) { background: #7DE3D8; color: #14302D; }
+.figure:nth-child(3n+3) { background: #FFB3C7; color: #3A0F22; }
+.figure .big {
+  font-family: "Baloo 2", "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 4px;
+}
+.figure .label { font-size: 14px; line-height: 1.4; text-align: left; }
+
+/* Tables scroll inside their own box on small screens */
+.table-wrap {
+  overflow-x: auto;
+  margin: 14px 0 18px;
+  border-radius: 16px;
+  border: 2px solid var(--rule);
+  background: var(--surface);
+  max-width: 100%;
+}
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th, td {
+  text-align: left;
+  padding: 10px 12px;
+  border-top: 1px solid var(--rule);
+  vertical-align: top;
+}
+th { background: var(--surface-2); font-weight: 800; }
+thead th { border-top: 0; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* Checklists */
+.check { list-style: none; padding-left: 0; }
+.check li { position: relative; padding-left: 32px; }
+.check li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 7px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--accent);
+  border-radius: 5px;
+}
+
+/* Shopping list tool */
+.tool {
+  background: var(--surface);
+  border: 2px solid var(--rule);
+  border-radius: 22px;
+  padding: 18px;
+  margin: 18px 0;
+  max-width: 100%;
+}
+.tool h3 { margin-top: 0; }
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 12px;
+}
+.field { display: grid; gap: 5px; min-width: 0; }
+.field label { font-size: 14px; font-weight: 800; color: var(--muted); }
+.field .opt { font-weight: 600; }
+.field input {
+  font: inherit;
+  font-size: 16px;
+  color: var(--fg);
+  background: var(--bg);
+  border: 2px solid var(--rule);
+  border-radius: 12px;
+  padding: 9px 12px;
+  width: 100%;
+  min-width: 0;
+}
+.field input:focus-visible, button:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 2px; }
+.field.wide { grid-column: span 2; }
+@media (max-width: 560px) { .field.wide { grid-column: auto; } }
+
+.btn {
+  font: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--on-accent);
+  background: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.btn.ghost { color: var(--accent); background: transparent; }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 12px 0 0; }
+.tool .hint { font-size: 14px; color: var(--muted); margin: 10px 0 0; text-align: left; }
+.msg { font-size: 14px; color: var(--accent); font-weight: 700; margin: 10px 0 0; min-height: 1.4em; text-align: left; }
+
+/* The printable sheet. Fixed colors so the exported JPG looks the same in both themes. */
+.sheet-scroll { overflow-x: auto; margin-top: 16px; max-width: 100%; }
+.sheet {
+  background: #FFFFFF;
+  color: #1A1A1A;
+  border: 1px solid #CFCFCF;
+  border-radius: 12px;
+  padding: 22px;
+  font-family: "Nunito", Arial, sans-serif;
+  width: 100%;
+  min-width: 300px;
+}
+.sheet h4 {
+  color: #1A1A1A;
+  font-family: "Baloo 2", "Nunito", Arial, sans-serif;
+  font-size: 26px;
+  letter-spacing: 0;
+  text-transform: none;
+  margin: 0 0 2px;
+  font-weight: 800;
+}
+.sheet .sheet-date { font-size: 14px; color: #555555; margin: 0 0 14px; text-align: left; }
+.sheet table { font-size: 15px; }
+.sheet th { background: #FFF1D6; color: #1A1A1A; border-bottom: 1px solid #BDBDBD; border-top: 0; }
+.sheet td { color: #1A1A1A; border-top: 0; border-bottom: 1px solid #E6E6E6; }
+.sheet .total-row td { font-weight: 800; border-top: 2px solid #1A1A1A; border-bottom: 0; }
+.sheet .empty { color: #777777; padding: 16px 0; text-align: left; }
+.sheet.exporting .del, .sheet.exporting .col-act { display: none; }
+
+.del {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: #B0245A;
+  background: transparent;
+  border: 0;
+  padding: 2px 4px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.sheet-note { font-size: 14px; color: var(--muted); margin: 10px 0 0; text-align: left; }
+
+footer.colophon {
+  font-size: 14px;
+  color: var(--muted);
+  border-top: 3px dotted var(--rule);
+  padding-top: 18px;
+  margin-top: 30px;
+  text-align: left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; transition: none !important; }
+}
+</style>
+
+<div class="wrap" lang="en">
+<details class="toc">
+<summary>Jump to a chapter</summary>
+<ol>
+    <li><a href="#cover">Cover</a></li>
+    <li><a href="#about">About the author</a></li>
+    <li><a href="#intro">Introduction</a></li>
+    <li class="part">Part 1 · Foundation</li>
+    <li><a href="#ch1">1. Why $200 Works (and Why It Is Hard)</a></li>
+    <li><a href="#ch2">2. The Frugal Mindset</a></li>
+    <li class="part">Part 2 · Planning</li>
+    <li><a href="#ch3">3. Know Your Baseline</a></li>
+    <li><a href="#ch4">4. Build Your $200 Budget Map</a></li>
+    <li><a href="#ch5">5. Plan Meals Around Sales and Pantry</a></li>
+    <li class="part">Part 3 · Smart Buying</li>
+    <li><a href="#ch6">6. Store Brand vs. Name Brand</a></li>
+    <li><a href="#ch7">7. Unit Pricing and Label Reading</a></li>
+    <li><a href="#ch8">8. Where to Shop</a></li>
+    <li><a href="#ch9">9. Coupons, Apps, and Cash Back</a></li>
+    <li class="part">Part 4 · Cooking and Stretching</li>
+    <li><a href="#ch10">10. Batch Cooking and Leftovers</a></li>
+    <li><a href="#ch11">11. The Frugal Pantry</a></li>
+    <li><a href="#ch12">12. Sample Meal Plans</a></li>
+    <li class="part">Part 5 · Making It Last</li>
+    <li><a href="#ch13">13. Handling Price Spikes</a></li>
+    <li><a href="#ch14">14. Getting the Family on Board</a></li>
+    <li><a href="#ch15">15. Tracking, Reviewing, and Adjusting</a></li>
+    <li class="part">Appendix</li>
+    <li><a href="#appendix-list">A. Printable Shopping List</a></li>
+    <li><a href="#sources">C. Sources and References</a></li>
+  </ol>
+</details>
+
+<main>
+
+<section class="page cover" id="cover">
+  <p class="eyebrow">A practical guide for busy households</p>
+  <h1>Frugal Mom's $200 Monthly Grocery Strategy</h1>
+  <p class="author">By <b>James Nobert</b></p>
+  <p class="lede">A step-by-step system for planning, buying, and cooking food for a month on a fixed budget, with the research behind each habit and the tools to start this week.</p>
+  <div class="meta-row">
+    <span>Approximately 50 printed pages</span>
+    <span>Five parts, fifteen chapters, one appendix</span>
+    <span>United States dollars</span>
+  </div>
+  <a class="quick-link" href="#appendix-list">Make a printable shopping list &rarr;</a>
+</section>
+
+<section class="page" id="about">
+  <p class="eyebrow">Front matter</p>
+  <h2>About the author</h2>
+  <p>James Nobert writes practical money guides for families who want to spend less on food without eating worse. His approach is simple: measure what you spend, plan what you cook, buy with unit prices in view, and use the food you already have before it goes bad. He writes for people who have little time, a full calendar, and a grocery bill that keeps climbing.</p>
+  <p>This book uses published government data and peer-reviewed or institutional research wherever a number or a claim needs support. Each source is cited where it is used and listed in Appendix C.</p>
+
+  <h3>How to use this book</h3>
+  <p>You can read it straight through, or you can jump to the part you need. If you have never tracked your food spending, start with Part 2. If you already know your numbers but your bill keeps rising, start with Part 3. The appendix holds a printable shopping list you can fill in on your phone or computer and save as an image.</p>
+
+  <div class="note">
+    <h4>Disclaimer</h4>
+    <p>This book offers general guidance on budgeting and food shopping. It is not financial, nutritional, or medical advice. If you have a medical condition, allergy, or special diet, talk with your doctor or a registered dietitian before you change what you eat. Prices change by region and season, so treat every dollar figure here as an example to check against your own store.</p>
+  </div>
+</section>
+
+<section class="page" id="intro">
+  <p class="eyebrow">Introduction</p>
+  <h2>Why a $200 month is possible, and what it takes</h2>
+  <p class="lede">$200 a month is not a magic number. It is a target, and whether it is realistic depends on how many people you feed and how much of what you buy you actually eat.</p>
+  <p>Most families who struggle with a grocery budget are not buying luxury food. They are losing money in three quieter ways. They pay more per pound than they need to, because they never compare prices by weight. They throw away food that spoils before anyone eats it. And they make extra trips to the store, where each visit brings another impulse purchase.</p>
+  <p>This book addresses all three. It gives you a way to see where your money goes, a method for building a weekly plan around what is on sale and what is already in your kitchen, and a set of buying and storage habits that keep waste low.</p>
+
+  <h3>An honest starting point</h3>
+  <p>Before going further, you need a realistic picture of what food costs. The U.S. Department of Agriculture publishes its Thrifty Food Plan, a model of what a household can spend on food at home while eating a nutritionally adequate diet. The May 2026 report lists the monthly cost for a reference family of four, two adults and two children, at <strong>$1,018.20</strong>.</p>
+  <div class="src">Source: USDA Center for Nutrition Policy and Promotion, Cost of Food at Home report, May 2026 (issued June 2026). <a href="https://fns-prod.azureedge.us/sites/default/files/resource-files/cnpp-costfood-tfp-may2026.pdf" target="_blank" rel="noopener">View the report</a></div>
+
+  <p>That figure is more than five times $200. The gap matters, and this book does not hide it. A household of one or two adults can come close to a $200 target with careful planning, especially if they use pantry staples and buy the store's own brand. A family of four on $200 will need to cut hard, rely heavily on dried beans, rice, eggs, oats, and frozen vegetables, and accept less variety. Some families will decide $200 is too tight and set a higher number. That is a sound choice, and Chapter 15 shows how to make it.</p>
+
+  <div class="figures">
+    <div class="figure"><div class="big">$1,018.20</div><div class="label">USDA Thrifty Food Plan, reference family of four, per month (May 2026)</div></div>
+    <div class="figure"><div class="big">$200</div><div class="label">The target this book is built around</div></div>
+    <div class="figure"><div class="big">31%</div><div class="label">Share of the U.S. food supply that went uneaten at the retail and consumer levels in 2010</div></div>
+  </div>
+  <p class="src">Sources: USDA CNPP (2026), as above. Buzby, Wells, and Hyman, USDA Economic Research Service, Economic Information Bulletin 121 (February 2014). <a href="https://www.ers.usda.gov/webdocs/publications/43833/43679_eib121_summary.pdf?v=1483.8" target="_blank" rel="noopener">View the summary</a></p>
+
+  <h3>Who this book is for</h3>
+  <ul>
+    <li>Busy parents who shop once a week and want the bill to stay predictable.</li>
+    <li>First-time budgeters who have just decided to track food spending.</li>
+    <li>Anyone whose food bill keeps rising and who cannot see why.</li>
+    <li>Single parents and couples on a fixed income who need every dollar to work.</li>
+  </ul>
+</section>
+
+<section class="page" id="ch1">
+  <div class="chapter-head">
+    <p class="num">Part 1 · Chapter 1</p>
+    <h2>Why $200 Works (and Why It Is Hard)</h2>
+  </div>
+
+  <h3>What families actually spend on food</h3>
+  <p>The average American household spends a large share of its budget on food, and a growing part of that goes to food eaten away from home. The USDA Economic Research Service tracks these numbers closely, and its data show that food-at-home prices rose sharply in the years after 2020. Most families felt that rise at the register, even if they did not read the reports.</p>
+  <p>The useful question is not "what does everyone spend?" It is "what does my household need, and where is the money going?" Averages hide a lot. A couple with no children and a family with three teenagers have very different food needs, and their budgets should look different too.</p>
+
+  <h3>The cost of waste</h3>
+  <p>The biggest hidden cost in most kitchens is food that gets thrown out. In its 2014 analysis, the USDA Economic Research Service estimated that 31 percent of the 430 billion pounds of food available in the retail and consumer stages of the U.S. food supply went uneaten in 2010. That is about 133 billion pounds. The same report put the dollar value of those losses, at those two stages, at $161.6 billion for 2010.</p>
+  <blockquote>
+    <p>"31 percent—or 133 billion pounds—of the 430 billion pounds of the available food supply" was lost at the retail and consumer levels.</p>
+    <footer>Buzby, Wells, and Hyman, USDA Economic Research Service, Economic Information Bulletin 121, February 2014</footer>
+  </blockquote>
+  <p>Those are national totals. They do not tell you what your household wastes. But they show the scale of the problem: a large share of the food people pay for never reaches a plate. Every week you cut waste, you stretch the same dollars further. You do not need to be perfect. Cutting waste by a few items a week can add up to a meaningful change in a month.</p>
+
+  <h3>Why $200 works when the habits change</h3>
+  <p>A $200 budget works for three reasons. First, it forces you to decide in advance what you will buy, which removes most impulse spending. Second, it pushes you toward foods that cost less per serving, such as dried beans, oats, rice, eggs, frozen vegetables, and bulk staples. Third, it makes you use what you already have, which means fewer purchases of food you do not need.</p>
+  <p>It is hard for three reasons too. Prices for some foods, especially fresh meat, fresh produce, and certain brands, can change quickly. Children have strong preferences. And many households shop without a list, which makes it easy to spend more than planned. Each of these problems has a fix, and the rest of this book covers them one by one.</p>
+
+  <div class="note">
+    <h4>Try this now</h4>
+    <ul class="check">
+      <li>Write down your current monthly food spending, including eating out and takeout.</li>
+      <li>Count how many people you feed in a typical week.</li>
+      <li>Decide whether $200 is a target for food at home only, or for all food.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="page" id="ch2">
+  <div class="chapter-head">
+    <p class="num">Part 1 · Chapter 2</p>
+    <h2>The Frugal Mindset</h2>
+  </div>
+
+  <h3>Cutting costs without cutting nutrition</h3>
+  <p>Frugal eating has a bad reputation. People picture plain noodles, no fruit, and meals that taste like a compromise. That picture is wrong. The goal is to pay less for the same nutrition, not to eat less of it. A bag of dried lentils, a bag of frozen spinach, and a dozen eggs can make a dozen satisfying meals, and they cost far less than a pre-made meal kit.</p>
+  <p>Nutrition experts generally agree that frozen vegetables and fruit are a sound choice. Most are picked and frozen at or near peak ripeness, so they often keep much of their nutrient content. Canned vegetables and fruit can also be healthy, especially when you choose versions with no added salt or sugar and drain or rinse them as needed.</p>
+
+  <h3>Replace "saving money" with "spending on purpose"</h3>
+  <p>Many people think of frugality as a list of things they must not buy. That approach tends to fail. It creates a sense of deprivation, and deprivation often ends in a large splurge. A better approach is to spend deliberately: decide in advance what matters, and spend your money there.</p>
+  <p>Ask three questions before each purchase. Will we eat this within a week? Is this the best price per unit I can get? Does this replace something I would otherwise buy? If the answer to the first two is no, skip it. If the answer to the third is yes, you have found a real saving.</p>
+
+  <h3>A simple rule for the week</h3>
+  <p>Give each week a clear job. Monday through Thursday, cook from what you have. Friday and Saturday, cook from the week's plan. Sunday, use leftovers and check the pantry before shopping. This rhythm keeps the cupboard moving and makes it less likely that food will spoil before you use it.</p>
+
+  <div class="note">
+    <h4>Mindset check</h4>
+    <p>If you slip one week, do not treat the budget as broken. Note what happened, adjust the next week's plan, and keep going. A budget is a tool for making decisions, not a test you pass or fail.</p>
+  </div>
+</section>
+
+<section class="page" id="ch3">
+  <div class="chapter-head">
+    <p class="num">Part 2 · Chapter 3</p>
+    <h2>Know Your Baseline</h2>
+  </div>
+
+  <h3>The 30-day spending audit</h3>
+  <p>You cannot cut a bill you have not measured. For the next 30 days, record every food purchase, whether it comes from the grocery store, a warehouse club, a farmers' market, a convenience store, a delivery app, or a restaurant. Keep the receipts, or take a photo of each one. Do not change your habits yet. The point is to see what really happens.</p>
+  <p>At the end of the month, sort your spending into four groups: groceries for home meals, snacks and drinks, eating out or takeout, and anything else, such as cleaning or paper goods that you may or may not include in your food budget. Add up each group. Most people are surprised by at least one total.</p>
+
+  <h3>Find the leaks</h3>
+  <p>Look for three patterns. The first is repeat small buys: a daily coffee, a pastry, a soda with lunch. Each seems minor, but together they often add up to more than a week of groceries. The second is duplicate buys: two jars of the same spice, three bags of the same frozen item. The third is waste: food you threw out, or food that went bad before you cooked it. Keep a simple tally of what you throw away for two weeks. Most households find that the same few items are discarded again and again.</p>
+
+  <h3>Simple tools for tracking</h3>
+  <p>You do not need an expensive app. A notebook works. So does a spreadsheet with four columns: date, store, item or category, and amount. If you prefer your phone, a notes app or a shared family list does the job. The key is to record every purchase on the day it happens. A tracker you update once a month is nearly always wrong.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Column</th><th>What to write</th><th>Example</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Date</td><td>The day you bought it</td><td>Mar 3</td></tr>
+        <tr><td>Store</td><td>Where you bought it</td><td>Discount grocer</td></tr>
+        <tr><td>Category</td><td>Produce, protein, dairy, grains, pantry, snacks, takeout</td><td>Produce</td></tr>
+        <tr><td>Amount</td><td>Total paid, including tax</td><td class="num">$14.62</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Set your baseline number</h3>
+  <p>When the 30 days are over, write down two numbers: your total food spending, and your total spending on food eaten at home. The second number is the one you will work on first. If your home-food total is already close to $200, the strategy in this book will mostly help you keep it there. If it is far above, expect bigger changes, and give yourself time to make them.</p>
+</section>
+
+<section class="page" id="ch4">
+  <div class="chapter-head">
+    <p class="num">Part 2 · Chapter 4</p>
+    <h2>Build Your $200 Budget Map</h2>
+  </div>
+
+  <h3>Check your household size first</h3>
+  <p>A budget is only as good as the household it is built for. The USDA publishes monthly costs by age and sex for its Thrifty Food Plan. Those figures are calculated for four-person households, and the USDA's own notes say that one-person households should add 20 percent. Using that rule, the reference figures for individual adults look like this. The one-person column is our own calculation from the USDA's stated adjustment, not a figure the USDA publishes.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Adult group (USDA, May 2026)</th><th class="num">Four-person table</th><th class="num">One-person estimate</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Female, 20 to 50</td><td class="num">$252.40</td><td class="num">$302.88</td></tr>
+        <tr><td>Male, 20 to 50</td><td class="num">$317.10</td><td class="num">$380.52</td></tr>
+        <tr><td>Female, 51 to 70</td><td class="num">$235.10</td><td class="num">$282.12</td></tr>
+        <tr><td>Male, 51 to 70</td><td class="num">$279.70</td><td class="num">$335.64</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">Source: USDA CNPP, Cost of Food at Home, May 2026. One-person estimates are calculated by adding 20 percent, as the report's footnote describes.</p>
+  <p>The lesson is clear. A single adult woman in her twenties or thirties can aim for $200 with careful planning, though it will be tight. A family with children cannot reach that level on the USDA's reference plan. That does not mean the family must fail. It means the family must either use a higher budget or build a plan that leans very heavily on the lowest-cost staples.</p>
+
+  <h3>Split the $200 into groups</h3>
+  <p>Once you know your number, divide it among the main food groups. The split below is a starting point for a single adult eating at home. Adjust it to your own needs.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Group</th><th class="num">Share</th><th class="num">Weekly amount</th><th>What to buy</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Produce</td><td class="num">25%</td><td class="num">$11.50</td><td>Frozen vegetables, seasonal fruit, bagged salad</td></tr>
+        <tr><td>Proteins</td><td class="num">25%</td><td class="num">$11.50</td><td>Eggs, dried beans, canned fish, store-brand chicken on sale</td></tr>
+        <tr><td>Grains and starches</td><td class="num">20%</td><td class="num">$9.20</td><td>Rice, oats, pasta, bread on sale</td></tr>
+        <tr><td>Dairy</td><td class="num">10%</td><td class="num">$4.60</td><td>Milk, yogurt, cheese block</td></tr>
+        <tr><td>Pantry and extras</td><td class="num">20%</td><td class="num">$9.20</td><td>Oil, spices, sauces, baking staples, a small treat</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">Weekly amounts assume a monthly budget of $200 spread across about four weeks, or $46 a week. The percentages are this book's suggested split, not a USDA standard.</p>
+
+  <h3>Weekly or monthly budgeting?</h3>
+  <p>Most families do better with a weekly budget, because a week is short enough to correct quickly. A monthly budget gives more freedom, but it also hides overspending until it is too late. A practical method is to set a weekly amount of about $46 for $200 a month, shop once or twice, and keep a running total on the fridge or in your phone. If you have a bad week, move the difference into the next week and reduce spending there.</p>
+
+  <div class="note">
+    <h4>Sample week for one adult</h4>
+    <p>Shop for $46 on Sunday. Buy two bags of frozen vegetables, a 5-pound bag of rice, a 2-pound bag of dried beans, a dozen eggs, a block of cheese, two bags of oats, a loaf of bread on sale, a bag of carrots, bananas, a jar of peanut butter, and the spices you need for the week. Keep $4 in reserve for a price drop mid-week.</p>
+  </div>
+</section>
+
+<section class="page" id="ch5">
+  <div class="chapter-head">
+    <p class="num">Part 2 · Chapter 5</p>
+    <h2>Plan Meals Around Sales and Pantry</h2>
+  </div>
+
+  <h3>Start with the flyer, then the fridge</h3>
+  <p>Good planning starts with two lists. The first is the week's sale flyer, from your usual grocery store or a store you can reach. The second is what is already in your kitchen, including the freezer and the back of the cupboard. Plan meals that use sale items and things you already own. This is the single most effective habit in this book, because it lets you buy less and waste less at the same time.</p>
+  <p>Write each sale item next to the meals it could appear in. If chicken thighs are on sale, plan a sheet-pan dinner and a batch of soup. If cabbage is cheap, plan a slaw and a stir-fry. Then check your pantry. If you have a can of tomatoes and half a bag of rice, you may only need to buy the protein and a vegetable.</p>
+
+  <h3>The "cook the cupboard first" method</h3>
+  <p>Once a week, take everything out of the fridge and freezer, and sort it by how soon it needs to be eaten. Put the things that will spoil first at the front. Plan at least two meals around those items before you buy anything new. This method cuts waste sharply, and it is cheap to try: it costs nothing but a few minutes.</p>
+  <p>Store the results on a whiteboard or a phone note. Include the date of each item when it was opened or bought. For example, a bag of spinach opened on Monday should be used by Thursday. A carton of milk should be used within a week of opening. You do not need exact science. You need to know which food is at risk.</p>
+
+  <h3>A simple planning routine</h3>
+  <ol>
+    <li>Check the sale flyer and note three to five items you could use.</li>
+    <li>Check the fridge, freezer, and pantry, and list what needs to be used first.</li>
+    <li>Plan seven dinners, using some repeat meals. Plan breakfasts and lunches with the same ingredients where possible.</li>
+    <li>Write one shopping list, grouped by store section.</li>
+    <li>Shop once, then stick to the list.</li>
+  </ol>
+  <p>Repeat meals are not a sign of poverty. Many people eat the same breakfast every day. Planning two or three favorite dinners on rotation means you rarely need to guess what to cook, and you can buy the ingredients in bulk when they are on sale.</p>
+</section>
+
+<section class="page" id="ch6">
+  <div class="chapter-head">
+    <p class="num">Part 3 · Chapter 6</p>
+    <h2>Store Brand vs. Name Brand</h2>
+  </div>
+
+  <h3>What the taste tests show</h3>
+  <p>Store brands are often cheaper than national brands, sometimes by a large margin. The question most shoppers ask is whether they are worse. Independent testing gives a useful answer. In August 2012, Consumer Reports published the results of a blind taste test on 19 grocery staples, comparing store brands with well-known national brands. Eleven of the store-brand products matched or beat their name-brand rivals. Ten tied on taste, and one, Giant Eagle chicken broth, beat Swanson.</p>
+  <blockquote>
+    <p>"Eleven Store-Brand Products Tie Or Beat Name-Brand Rivals In CR Taste-Tests."</p>
+    <footer>Consumer Reports press release, August 30, 2012</footer>
+  </blockquote>
+  <p class="src"><a href="https://www.consumerreports.org/media-room/press-releases/2012/08/eleven-store-brand-products-tie-or-beat-name-brand-rivals-in-cr-taste-tests/" target="_blank" rel="noopener">Read the Consumer Reports release</a></p>
+  <p>Those results are from one test in one year, and results vary by product and by brand. The lesson is not that every store brand is equal. It is that you should test store brands for yourself, one item at a time, and keep the ones your family likes.</p>
+
+  <h3>Which items to buy store brand</h3>
+  <p>In general, store brands are a safe choice for basics where the ingredients are standard and the taste is simple. These include flour, sugar, salt, dried pasta, rice, canned beans, canned tomatoes, frozen vegetables, oats, milk, eggs, plain cheese, and cooking oil. Test one item at a time. Buy the store brand, and if your family notices a difference, switch back for that item only.</p>
+  <p>Some items are worth paying more for, or at least testing carefully. These often include products where flavor is the main point, such as specialty sauces, flavored coffee, or a particular cereal your children are attached to. Spend where it matters to your family, and save where it does not.</p>
+
+  <h3>How to test a store brand fairly</h3>
+  <ol>
+    <li>Buy the store brand and the name brand in the same size.</li>
+    <li>Taste them side by side, with the same preparation, and without looking at the label if possible.</li>
+    <li>Ask every person in the household to rate them, including children.</li>
+    <li>Note the unit price of each (see Chapter 7). Keep the cheaper one if the taste is close.</li>
+  </ol>
+
+  <div class="note">
+    <h4>Quick rule</h4>
+    <p>If the store brand costs at least 20 percent less per unit and passes a family taste test, make it your default for that item.</p>
+  </div>
+</section>
+
+<section class="page" id="ch7">
+  <div class="chapter-head">
+    <p class="num">Part 3 · Chapter 7</p>
+    <h2>Unit Pricing and Label Reading</h2>
+  </div>
+
+  <h3>Price per unit is the real price</h3>
+  <p>The shelf price tells you what you will pay at the register. It does not tell you what you are buying. A 16-ounce jar at $3.20 and a 24-ounce jar at $4.20 look like a simple choice, but the bigger jar costs less per ounce. Most grocery stores print a unit price on the shelf tag, usually per ounce, per pound, or per 100 grams. Use it. When the shelf tag is missing or unclear, divide the price by the amount yourself.</p>
+  <p>Unit price comparisons work best when you compare the same kind of product. Compare a 12-ounce bag with a 24-ounce bag of the same brand. Do not compare a bag of rice with a box of crackers, because the two are not really alternatives.</p>
+
+  <h3>A worked example</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Product</th><th class="num">Price</th><th class="num">Size</th><th class="num">Price per ounce</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Store-brand oats, small</td><td class="num">$2.49</td><td class="num">18 oz</td><td class="num">$0.14</td></tr>
+        <tr><td>Store-brand oats, large</td><td class="num">$4.29</td><td class="num">42 oz</td><td class="num">$0.10</td></tr>
+        <tr><td>Name-brand oats, large</td><td class="num">$5.19</td><td class="num">42 oz</td><td class="num">$0.12</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">These prices are examples, not current store prices. Check the shelf tag in your own store.</p>
+  <p>The large store-brand box costs more at the register but less per ounce. The trick is to buy it only if you will use it before it goes stale or gets wasted. A big bag you throw out costs more than a small bag you finish.</p>
+
+  <h3>Reading date labels</h3>
+  <p>Date labels cause a lot of waste. Many people throw out food on the day its label says to, even when the food is still fine. The USDA Food Safety and Inspection Service explains that most date labels are about quality, not safety. In a December 2016 announcement, the agency recommended "Best if Used By" because research showed consumers understood it as a quality indicator rather than a safety warning.</p>
+  <blockquote>
+    <p>"Best if Used By" is "easily understood by consumers as an indicator of quality, rather than safety."</p>
+    <footer>USDA Food Safety and Inspection Service, announcement on date labeling guidance, December 14, 2016</footer>
+  </blockquote>
+  <p>Apart from infant formula, federal rules do not require most foods to carry a date. Labels are set by manufacturers, and the wording varies: "sell by," "best by," "use by," and "best if used by" can mean different things. The safe approach is to check the food yourself. Look for mold, off smells, or a sour taste, and follow safe storage rules.</p>
+
+  <div class="note">
+    <h4>A practical rule</h4>
+    <ul>
+      <li>Milk, deli meat, and fresh meat: follow the use-by or sell-by date, and freeze before the date if you will not use them.</li>
+      <li>Bread, cereal, crackers, and frozen items: these often stay good well past the printed date. Check quality before you toss.</li>
+      <li>Eggs and hard cheese: check for quality, and keep them in the fridge.</li>
+    </ul>
+  </div>
+
+  <p class="src">Date labels: USDA FSIS guidance (2016). A 2019 report cited by the National Conference of State Legislatures estimates that confusion over date labels is believed to contribute to about 20 percent of food waste in the home. <a href="https://www.ncsl.org/state-legislatures-news/details/legislators-fight-food-waste-through-labeling-laws" target="_blank" rel="noopener">Read the NCSL article</a>.</p>
+</section>
+
+<section class="page" id="ch8">
+  <div class="chapter-head">
+    <p class="num">Part 3 · Chapter 8</p>
+    <h2>Where to Shop</h2>
+  </div>
+
+  <h3>Match the store to the job</h3>
+  <p>No single store is cheapest for everything. Discount grocers often have the lowest prices on basics, but a smaller selection. Warehouse clubs sell large sizes at low unit prices, but require a membership and a big upfront commitment. Ethnic and local markets often sell spices, rice, produce, and fresh herbs for less. Farmers' markets can be good value at the end of the day, when vendors want to sell out.</p>
+  <p>A practical plan is to use two stores at most. One is your main store for weekly shopping. The second is a discount or specialty store that you visit once a month for pantry staples. Traveling to a third store rarely saves enough to justify the time and gas.</p>
+
+  <h3>The trade-offs</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Store type</th><th>Good for</th><th>Watch out for</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Discount grocer</td><td>Basics, store brands, low shelf prices</td><td>Smaller selection, may need to skip favorite brands</td></tr>
+        <tr><td>Warehouse club</td><td>Bulk staples, frozen food, paper goods</td><td>Membership fee, large quantities you may not use</td></tr>
+        <tr><td>Ethnic or local market</td><td>Spices, rice, beans, fresh herbs, produce</td><td>Travel time, uneven hours</td></tr>
+        <tr><td>Farmers' market</td><td>Seasonal produce, end-of-day deals</td><td>Higher prices at the start of the day, cash or card limits</td></tr>
+        <tr><td>Regular supermarket</td><td>Convenience, sale flyers, pharmacy items</td><td>Higher prices on many items, more impulse buys</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Shop the perimeter, then the aisles</h3>
+  <p>Stores place fresh produce, meat, and dairy around the outside walls, and most processed foods in the middle aisles. Plan to spend most of your time on the perimeter for fresh basics, and then make a short, planned trip into the aisles for pantry items. Keep to the list. Many people find that the middle of the store is where their budget leaks.</p>
+
+  <h3>Avoid the extra trip</h3>
+  <p>Every extra trip to the store is a chance to spend more. Shopping once a week, or once every two weeks for a larger shop, reduces impulse buys and fuel costs. If you run out of something mid-week, check whether you already have a substitute before you go out.</p>
+</section>
+
+<section class="page" id="ch9">
+  <div class="chapter-head">
+    <p class="num">Part 3 · Chapter 9</p>
+    <h2>Coupons, Apps, and Cash Back</h2>
+  </div>
+
+  <h3>What actually saves money</h3>
+  <p>Coupons can save real money, but only on items you already planned to buy. A coupon for a product you would not otherwise buy is not a saving. It is a cost. The same is true for "buy one, get one" offers on items you will not finish. Use a coupon only when the item is on your list and you would buy it at full price anyway.</p>
+  <p>Store loyalty programs and apps can help too. Many offer digital coupons on staples, personalized deals, or points that turn into fuel discounts. Check the program before you sign up, and skip any program that requires you to spend more than you planned to get the reward.</p>
+
+  <h3>Traps built into the system</h3>
+  <p>Retailers design stores to sell more, and loyalty programs are no exception. Some offers push you toward large bundles, impulse items placed at the register, or "free with purchase" items that cost more than the discount. Read the fine print, and compare the total you will pay with and without the offer.</p>
+  <ul>
+    <li>Before you shop, check whether your app offers a discount on an item you need.</li>
+    <li>Set a rule: only use an offer if it lowers the unit price of something on your list.</li>
+    <li>Leave the store app closed while you shop, if notifications tempt you to browse.</li>
+  </ul>
+
+  <h3>Cash back and receipts</h3>
+  <p>Cash-back apps that pay a small amount for scanned receipts can add a little income, but they are not a reason to buy more. If you use one, count the rebate as a bonus, not as part of your food budget. Keep a record of what you earned, and spend it on food or other needs as planned.</p>
+</section>
+
+
+<section class="page" id="ch10">
+  <div class="chapter-head">
+    <p class="num">Part 4 · Chapter 10</p>
+    <h2>Batch Cooking and Leftovers</h2>
+  </div>
+
+  <h3>Cook once, eat several times</h3>
+  <p>Batch cooking means preparing a large amount of one dish, then eating it across several meals. It saves time, reduces the number of meals you have to plan, and makes it easier to use bulk ingredients. A pot of bean chili, a tray of roasted vegetables, or a big batch of rice can cover lunches and dinners for several days.</p>
+  <p>The method works best with dishes that store well and reheat without much loss of quality. Soups, stews, chili, casseroles, grain bowls with a sauce served separately, and cooked beans all fit. Salads with delicate greens do not, unless you pack the dressing and greens separately.</p>
+
+  <h3>Leftovers are a plan, not a backup</h3>
+  <p>Many households treat leftovers as the thing you eat when nothing else is planned. That approach leads to waste. Instead, plan leftovers on purpose. When you cook a roast chicken on Sunday, plan chicken soup on Tuesday and chicken fried rice on Thursday. Write these meals on the plan so the food is used before it is forgotten.</p>
+
+  <h3>Cooling and storing safely</h3>
+  <p>Leftovers need to cool quickly and be stored correctly. The USDA recommends refrigerating cooked food within two hours, or within one hour if the room is hotter than 90 degrees Fahrenheit. Store leftovers in shallow containers so they cool faster. Eat refrigerated leftovers within three to four days, or freeze them for longer storage. Label each container with the date and contents.</p>
+
+  <div class="note">
+    <h4>Storage at a glance</h4>
+    <ul>
+      <li>Cooked leftovers: refrigerate within two hours, use within three to four days.</li>
+      <li>Frozen soups and stews: label with the date, use within two to three months for best quality.</li>
+      <li>Cooked rice: cool quickly, refrigerate, and reheat until steaming hot.</li>
+    </ul>
+  </div>
+  <p class="src">Storage guidance reflects USDA Food Safety and Inspection Service recommendations on cooling and refrigerating cooked food.</p>
+
+  <h3>Why waste matters for your budget</h3>
+  <p>Food waste is one of the largest and least visible costs in most kitchens. The USDA Economic Research Service found that 31 percent of the food available at the retail and consumer levels in 2010 went uneaten. For a household, the money lost to waste is money that could have bought another week of staples. Cutting waste is the cheapest way to stretch a budget, because it requires no new purchases.</p>
+  <p>Track your waste for two weeks. Keep a container in the fridge for food that is about to go bad, and check it before each shopping trip. You will often find that the same few items keep appearing. Buy those items in smaller amounts, or stop buying them until you can use them.</p>
+
+  <h3>A batch cooking day</h3>
+  <p>Pick one afternoon a week or every two weeks. Cook two big pots, one savory and one grain or bean dish. Roast a tray of vegetables. Cook a dozen eggs. Portion everything into containers for the next few days, and freeze what you will not use within the week. A two-hour session can make most of your weekday lunches.</p>
+</section>
+
+<section class="page" id="ch11">
+  <div class="chapter-head">
+    <p class="num">Part 4 · Chapter 11</p>
+    <h2>The Frugal Pantry</h2>
+  </div>
+
+  <h3>Why a pantry saves money</h3>
+  <p>A well-stocked pantry lets you cook a full meal without a shopping trip. It also lets you buy staples when they are cheapest, rather than when you run out. Staple foods tend to have a long shelf life and a low cost per serving, which makes them the backbone of a $200 budget.</p>
+
+  <h3>Core staples to buy in bulk</h3>
+  <ul>
+    <li><strong>Dry rice and dried pasta.</strong> Cheap, long-lasting, and filling. Store in airtight containers in a cool, dry place.</li>
+    <li><strong>Dried beans and lentils.</strong> Usually cheaper per serving than canned, though they need soaking or longer cooking. Pressure cookers and slow cookers make them easy.</li>
+    <li><strong>Rolled oats.</strong> Good for breakfast, baking, and binding meatballs or burgers.</li>
+    <li><strong>Frozen vegetables.</strong> Keep several bags on hand. They do not spoil quickly, and they work in soups, stir-fries, and casseroles.</li>
+    <li><strong>Eggs.</strong> One of the best sources of protein per dollar. Buy the store brand in the largest size you can use before the date.</li>
+    <li><strong>Canned tomatoes, canned beans, and canned fish.</strong> Useful for quick meals. Choose low-sodium versions when you can.</li>
+    <li><strong>Flour, sugar, baking soda, and salt.</strong> Basic baking supplies that cover bread, pancakes, and quick breads.</li>
+    <li><strong>Cooking oil and vinegar.</strong> Used in almost every savory dish.</li>
+    <li><strong>Spices.</strong> Buy a few core ones, such as garlic powder, cumin, chili powder, and black pepper. Buy whole spices from ethnic markets when you can.</li>
+  </ul>
+
+  <h3>Buy bulk only when you will use it</h3>
+  <p>Bulk buying saves money only if the food gets eaten before it goes stale, gets infested, or simply sits in the back of the cupboard. Before buying a large bag, check how long you usually take to finish one. For rice and dried beans, the answer is often months, so bulk makes sense. For a large jar of a specialty sauce, the answer may be that it goes off before you use it.</p>
+
+  <h3>Storage that prevents spoilage</h3>
+  <ul>
+    <li>Use airtight containers for dry goods, especially flour, oats, and rice.</li>
+    <li>Keep grains and flour in a cool, dry place away from the stove.</li>
+    <li>Store nuts and oils in the fridge or freezer, where they keep longer.</li>
+    <li>Date each container when you open it, and move older items to the front.</li>
+    <li>Check the pantry once a month for pests and expired items.</li>
+  </ul>
+  <p>A pantry is only useful if you can see what is in it. Keep a list on the inside of the cupboard door, and cross items off as you use them. Chapter 5's "cook the cupboard first" method works best with a clear list.</p>
+</section>
+
+<section class="page" id="ch12">
+  <div class="chapter-head">
+    <p class="num">Part 4 · Chapter 12</p>
+    <h2>Sample Meal Plans</h2>
+  </div>
+
+  <h3>How to use these plans</h3>
+  <p>The four weeks below are examples. Each one is built for a single adult, costs under $50 in the example prices used here, and uses staples from Chapter 11. Adjust quantities for your household. Prices are illustrative, not current store prices, so check your own shelf tags. The purpose is to show how the pieces fit together.</p>
+
+  <h3>Week 1: The pantry-first week</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Day</th><th>Breakfast</th><th>Lunch</th><th>Dinner</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Mon</td><td>Oatmeal with banana</td><td>Bean and rice bowl</td><td>Lentil soup with bread</td></tr>
+        <tr><td>Tue</td><td>Scrambled eggs and toast</td><td>Lentil soup, leftover</td><td>Egg fried rice with frozen peas</td></tr>
+        <tr><td>Wed</td><td>Oatmeal with peanut butter</td><td>Egg fried rice, leftover</td><td>Bean chili over rice</td></tr>
+        <tr><td>Thu</td><td>Yogurt and oats</td><td>Chili, leftover</td><td>Pasta with canned tomato and garlic</td></tr>
+        <tr><td>Fri</td><td>Eggs on toast</td><td>Pasta, leftover</td><td>Baked potatoes with beans and cheese</td></tr>
+        <tr><td>Sat</td><td>Pancakes with oats and egg</td><td>Potato bowl, leftover</td><td>Vegetable stir-fry with rice</td></tr>
+        <tr><td>Sun</td><td>Oatmeal</td><td>Stir-fry, leftover</td><td>Roast chicken thighs with carrots</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">Shopping list for Week 1: 1 lb dried lentils, 1 lb dried beans, 2 lb rice, 1 bag frozen peas, 2 bags frozen mixed vegetables, 1 dozen eggs, 1 canned tomato (28 oz), 1 box pasta, 5 lb potatoes, 1 block cheese, 1 bag oats, 1 loaf bread, 2 bananas, 1 small yogurt, 2 lb chicken thighs, 1 bag carrots, garlic, soy sauce, oil.</p>
+
+  <h3>Week 2: The batch-cook week</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Day</th><th>Breakfast</th><th>Lunch</th><th>Dinner</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Mon</td><td>Oatmeal with apple</td><td>Black bean soup</td><td>Turkey and bean burrito bowls</td></tr>
+        <tr><td>Tue</td><td>Eggs and toast</td><td>Black bean soup, leftover</td><td>Chicken and vegetable soup</td></tr>
+        <tr><td>Wed</td><td>Yogurt and oats</td><td>Chicken soup, leftover</td><td>Egg and cheese quesadillas with salsa</td></tr>
+        <tr><td>Thu</td><td>Oatmeal</td><td>Quesadilla, leftover</td><td>Rice and lentil pilaf</td></tr>
+        <tr><td>Fri</td><td>Eggs and toast</td><td>Pilaf, leftover</td><td>Bean burrito bowls, leftover</td></tr>
+        <tr><td>Sat</td><td>Pancakes</td><td>Bowl, leftover</td><td>Homemade pizza on flatbread</td></tr>
+        <tr><td>Sun</td><td>Oatmeal</td><td>Pizza, leftover</td><td>Baked beans and rice</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">Shopping list for Week 2: 1 lb dried black beans, 2 lb rice, 1 lb dried lentils, 1 lb ground turkey, 1 lb chicken thighs, 1 dozen eggs, 1 block cheese, 1 jar salsa, 1 bag frozen corn, 1 bag onions, 3 carrots, 1 bag spinach, 1 bag oats, 1 loaf bread, flatbread, apples, canned tomatoes.</p>
+
+  <h3>Week 3: The sale-driven week</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Day</th><th>Breakfast</th><th>Lunch</th><th>Dinner</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Mon</td><td>Oatmeal with raisins</td><td>Tuna and bean salad</td><td>Sheet-pan chicken with potatoes (sale chicken)</td></tr>
+        <tr><td>Tue</td><td>Eggs and toast</td><td>Chicken and potato, leftover</td><td>Cabbage and sausage skillet (sale cabbage)</td></tr>
+        <tr><td>Wed</td><td>Yogurt and oats</td><td>Skillet, leftover</td><td>Pasta with spinach and beans</td></tr>
+        <tr><td>Thu</td><td>Oatmeal</td><td>Pasta, leftover</td><td>Tuna patties with a side salad</td></tr>
+        <tr><td>Fri</td><td>Pancakes</td><td>Patties, leftover</td><td>Egg fried rice with cabbage</td></tr>
+        <tr><td>Sat</td><td>Eggs and toast</td><td>Rice, leftover</td><td>Chicken soup with noodles</td></tr>
+        <tr><td>Sun</td><td>Oatmeal</td><td>Soup, leftover</td><td>Bean tacos with cabbage slaw</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">Shopping list for Week 3: 2 lb chicken thighs, 1 head cabbage, 1 lb sausage, 1 can tuna, 1 can white beans, 1 dozen eggs, 1 bag potatoes, 1 box pasta, 1 bag spinach, rice, noodles, tortillas, 1 bag oats, 1 loaf bread.</p>
+
+  <h3>Week 4: The clean-out week</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Day</th><th>Breakfast</th><th>Lunch</th><th>Dinner</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Mon</td><td>Whatever is left over</td><td>Soup from the freezer</td><td>Fried rice with every vegetable left</td></tr>
+        <tr><td>Tue</td><td>Eggs</td><td>Fried rice, leftover</td><td>Pantry pasta with beans and tomato</td></tr>
+        <tr><td>Wed</td><td>Oatmeal</td><td>Pasta, leftover</td><td>Lentil and rice bake</td></tr>
+        <tr><td>Thu</td><td>Toast and peanut butter</td><td>Bake, leftover</td><td>Egg and vegetable frittata</td></tr>
+        <tr><td>Fri</td><td>Oatmeal</td><td>Frittata, leftover</td><td>Leftover night</td></tr>
+        <tr><td>Sat</td><td>Pancakes</td><td>Simple sandwich</td><td>Bean soup</td></tr>
+        <tr><td>Sun</td><td>Eggs</td><td>Soup, leftover</td><td>Shop the list for the next month</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">Week 4 uses items already in the pantry and fridge. Buy only what the plan cannot cover: milk, bread, and fresh vegetables for the frittata, usually about $10 to $12.</p>
+
+  <div class="note">
+    <h4>Adjusting the plans for a family</h4>
+    <p>For a household of four, multiply the protein and grain amounts by about three, and expect the weekly total to run well above $46. The principles still apply: plan around sales, repeat meals, use leftovers on purpose, and buy staples in bulk. Chapter 15 explains how to set a realistic family budget.</p>
+  </div>
+</section>
+
+<section class="page" id="ch13">
+  <div class="chapter-head">
+    <p class="num">Part 5 · Chapter 13</p>
+    <h2>Handling Price Spikes</h2>
+  </div>
+
+  <h3>Prices move, and your plan must move with them</h3>
+  <p>Some foods can double in price within a few months. Beef, eggs, coffee, and certain fresh produce have all seen sharp rises at different points. When a favorite item jumps, the worst response is to keep buying it at the new price and hope it comes down. A better response is to set a rule before the spike happens.</p>
+
+  <h3>A three-step response</h3>
+  <ol>
+    <li><strong>Swap.</strong> Replace the item with a cheaper one that does a similar job. Ground turkey for ground beef, dried beans for canned, frozen vegetables for fresh.</li>
+    <li><strong>Shrink.</strong> Use less of the item in each meal. Stretch meat with beans, lentils, or grains in chili, tacos, and sauces.</li>
+    <li><strong>Pause.</strong> If nothing works, skip the item for a few weeks. Most families find they do not miss it as much as they expected.</li>
+  </ol>
+
+  <h3>Track unit prices over time</h3>
+  <p>Keep a short list of your ten most-bought items, with the unit price you paid each time. A simple note on your phone is enough. When a price rises by more than about 15 percent, consider a swap. This makes price spikes visible early, rather than something you notice only at checkout.</p>
+
+  <div class="note">
+    <h4>Rule of thumb</h4>
+    <p>When one item rises sharply, cut its quantity in half for two weeks before you decide to stop buying it. That gives you a real test of how much your family needs it.</p>
+  </div>
+</section>
+
+<section class="page" id="ch14">
+  <div class="chapter-head">
+    <p class="num">Part 5 · Chapter 14</p>
+    <h2>Getting the Family on Board</h2>
+  </div>
+
+  <h3>Involve children in planning</h3>
+  <p>A budget works best when everyone understands it. Children can help plan meals, choose between two options, and check prices. Give them a simple job: pick one vegetable for the week, or find the cheapest bag of apples on the shelf. Children who help choose food often feel more ownership over what ends up on the table.</p>
+  <p>Involvement also helps with eating. Research on children's food acceptance points in the same direction. A 2019 review in the American Journal of Clinical Nutrition, by Spill and colleagues, found that tasting a food on a repeated basis increases a child's acceptance of it. The review reported that exposure over about 8 to 10 or more days is likely to increase acceptability of an exposed food.</p>
+  <blockquote>
+    <p>Exposure to a food for "8-10 or more days is likely to increase acceptability of an exposed food."</p>
+    <footer>Spill, Johns, Callahan, and colleagues, American Journal of Clinical Nutrition, 2019</footer>
+  </blockquote>
+  <p class="src">Source: Spill, M. K., Johns, K., Callahan, E. H., et al. (2019), review of repeated exposure and food acceptability in children, published in The American Journal of Clinical Nutrition. Summary accessed through the RTI International publication record.</p>
+  <p>For a budget, this matters. If you buy a vegetable your child refuses, do not give up after one try. Offer a small portion on several days, in different forms, and let the child decide whether to eat it. A food your family eats is worth far more than a food they throw away.</p>
+
+  <h3>Handling picky eaters on a tight budget</h3>
+  <ul>
+    <li>Serve a small amount of the new food alongside a familiar one, and do not force a bite.</li>
+    <li>Let children serve themselves from shared dishes, so portions match their appetite.</li>
+    <li>Repeat meals the family already enjoys, and add one new food per week.</li>
+    <li>Keep snacks simple and planned, so children are not hungry at the wrong time.</li>
+  </ul>
+
+  <h3>Make the rules clear</h3>
+  <p>Agree on a few household rules and write them down. For example: one treat per week, no takeout on weeknights, and everyone helps clear up leftovers. When rules are clear and fair, children are more likely to follow them, and parents spend less time arguing about each purchase.</p>
+</section>
+
+<section class="page" id="ch15">
+  <div class="chapter-head">
+    <p class="num">Part 5 · Chapter 15</p>
+    <h2>Tracking, Reviewing, and Adjusting</h2>
+  </div>
+
+  <h3>The 20-minute monthly review</h3>
+  <p>Once a month, set aside 20 minutes to review your food spending. Use the notes or receipts you kept, and answer five questions. How much did we spend in total? How much of that was food at home? How much did we throw away? Which items were the biggest surprises? What will we change next month?</p>
+  <ol>
+    <li>Add up the month's total food spending and the home-food total.</li>
+    <li>Compare the total with your budget, and note the difference.</li>
+    <li>Review your waste tally and choose one item to buy less of.</li>
+    <li>Check your ten most-bought items for price changes.</li>
+    <li>Write down one change for next month, and one thing that worked.</li>
+  </ol>
+
+  <h3>When $200 should become $220</h3>
+  <p>Sometimes the honest answer is that $200 is too low. That may happen because your household is larger than the plan assumed, because prices have risen in your area, or because you have a family member with special dietary needs. The question is not whether you failed. The question is whether the budget still matches the household it serves.</p>
+  <p>Use a simple test. If you have cut waste, used the pantry, shopped with a list, and compared unit prices for three months, and you still cannot meet $200 without going hungry or skipping needed foods, raise the budget. A figure you can keep for a year is better than a figure you abandon in a month. A reasonable step is to raise the budget by a fixed amount, such as $20, and review again in three months.</p>
+
+  <div class="figures">
+    <div class="figure"><div class="big">20 min</div><div class="label">A monthly review that keeps the budget honest</div></div>
+    <div class="figure"><div class="big">$20</div><div class="label">A sensible step if the budget needs to rise</div></div>
+    <div class="figure"><div class="big">3 months</div><div class="label">How long to test a new budget before you judge it</div></div>
+  </div>
+
+  <h3>Keep the habits that work</h3>
+  <p>The best budget is one you can follow without thinking about it. After a few months, many of the steps in this book become routine: the weekly plan, the unit-price check, the pantry review. Keep those, and drop the steps that do not help. The strategy is a set of habits, and your habits are yours to shape.</p>
+
+  <div class="note">
+    <h4>Closing thought</h4>
+    <p>A $200 month is not a test of willpower. It is a set of decisions made in advance, checked each week, and adjusted each month. Start with the 30-day audit. Build the plan. Keep the appendix list handy. And give yourself permission to change the number when your life changes.</p>
+  </div>
+</section>
+
+<section class="page" id="appendix-list">
+  <p class="eyebrow">Appendix A</p>
+  <h2>Printable Shopping List</h2>
+  <p class="lede">Add the items you need, with a quantity, an optional price, and a date. When the list is ready, export it as a JPG image and save it to your device.</p>
+
+  <div class="tool" id="list-tool">
+    <h3>Build your list</h3>
+    <form id="item-form" autocomplete="off">
+      <div class="form-grid">
+        <div class="field wide">
+          <label for="item-name">Item</label>
+          <input id="item-name" name="item" type="text" maxlength="80" placeholder="For example, eggs" required>
+        </div>
+        <div class="field">
+          <label for="item-qty">Quantity</label>
+          <input id="item-qty" name="qty" type="text" maxlength="30" placeholder="For example, 2 dozen" value="1">
+        </div>
+        <div class="field">
+          <label for="item-price">Price <span class="opt">(optional)</span></label>
+          <input id="item-price" name="price" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00">
+        </div>
+        <div class="field">
+          <label for="item-date">Date</label>
+          <input id="item-date" name="date" type="date">
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn" type="submit">Add to list</button>
+      </div>
+      <p class="msg" id="form-msg" role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="btn-row">
+      <button class="btn" type="button" id="export-btn" disabled>Export as JPG</button>
+      <button class="btn ghost" type="button" id="clear-btn" disabled>Clear list</button>
+    </div>
+    <p class="hint">Your list is saved in this browser. Export creates a JPG and downloads it to your device.</p>
+    <p class="msg" id="export-msg" role="status" aria-live="polite"></p>
+
+    <div class="sheet-scroll">
+      <div class="sheet" id="export-sheet">
+        <h4>Shopping List</h4>
+        <p class="sheet-date" id="sheet-date"></p>
+        <table>
+          <thead>
+            <tr><th>Item</th><th>Qty</th><th>Price</th><th>Date</th><th class="col-act"></th></tr>
+          </thead>
+          <tbody id="list-body"></tbody>
+        </table>
+        <p class="empty" id="list-empty">No items yet. Add your first item above.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="sheet-note">The printable sheet shows each item with its quantity, price when entered, and date. The total counts only the items that have a price.</p>
+</section>
+
+<section class="page" id="sources">
+  <p class="eyebrow">Appendix C</p>
+  <h2>Sources and References</h2>
+  <p>Every figure and quotation in this book comes from the sources below. Checked dates are shown where they matter.</p>
+  <ol>
+    <li>USDA Center for Nutrition Policy and Promotion. <em>Cost of Food at Home: Official USDA Food Plans, May 2026</em> (issued June 2026). Monthly Thrifty Food Plan costs, including the reference family of four at $1,018.20. <a href="https://fns-prod.azureedge.us/sites/default/files/resource-files/cnpp-costfood-tfp-may2026.pdf" target="_blank" rel="noopener">fns-prod.azureedge.us</a></li>
+    <li>Buzby, J. C., Wells, H. F., and Hyman, J. <em>The Estimated Amount, Value, and Calories of Postharvest Food Losses at the Retail and Consumer Levels in the United States</em>. USDA Economic Research Service, Economic Information Bulletin 121, February 2014. <a href="https://www.ers.usda.gov/webdocs/publications/43833/43679_eib121_summary.pdf?v=1483.8" target="_blank" rel="noopener">ers.usda.gov</a></li>
+    <li>USDA Food Safety and Inspection Service. Announcement on revised guidance on date labeling to reduce food waste, December 14, 2016. <a href="https://www.fsis.usda.gov/news-and-events/news/usda-revises-guidance-date-labeling-reduce-food-waste" target="_blank" rel="noopener">fsis.usda.gov</a></li>
+    <li>National Conference of State Legislatures. "Legislators Fight Food Waste Through Labeling Laws." Cites a 2019 report estimating that confusion over date labels contributes to about 20 percent of home food waste. <a href="https://www.ncsl.org/state-legislatures-news/details/legislators-fight-food-waste-through-labeling-laws" target="_blank" rel="noopener">ncsl.org</a></li>
+    <li>Consumer Reports. "Eleven Store-Brand Products Tie or Beat Name-Brand Rivals in CR Taste-Tests." Press release, August 30, 2012. <a href="https://www.consumerreports.org/media-room/press-releases/2012/08/eleven-store-brand-products-tie-or-beat-name-brand-rivals-in-cr-taste-tests/" target="_blank" rel="noopener">consumerreports.org</a></li>
+    <li>Spill, M. K., Johns, K., Callahan, E. H., et al. Review of repeated exposure and food acceptability in infants and toddlers. <em>The American Journal of Clinical Nutrition</em>, 2019. Summary record: <a href="https://www.rti.org/publication/repeated-exposure-food-and-food-acceptability-infants-and-toddlers" target="_blank" rel="noopener">rti.org</a></li>
+    <li>USDA Food Safety and Inspection Service guidance on refrigerating and cooling cooked leftovers (used for the two-hour and four-day storage guidance in Chapter 10). Check the current FSIS food safety pages before relying on specific times.</li>
+  </ol>
+  <p class="src">Prices shown in worked examples are illustrative. Check current prices in your own store.</p>
+</section>
+
+<footer class="colophon">
+  Frugal Mom's $200 Monthly Grocery Strategy, by James Nobert. This book is general guidance, not financial, nutritional, or medical advice.
+</footer>
+
+</main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+(function () {
+  var KEY = 'frugal-shopping-list-v1';
+  var items = [];
+  var nextId = 1;
+
+  var form = document.getElementById('item-form');
+  var nameInput = document.getElementById('item-name');
+  var qtyInput = document.getElementById('item-qty');
+  var priceInput = document.getElementById('item-price');
+  var dateInput = document.getElementById('item-date');
+  var body = document.getElementById('list-body');
+  var sheet = document.getElementById('export-sheet');
+  var sheetDate = document.getElementById('sheet-date');
+  var emptyNote = document.getElementById('list-empty');
+  var exportBtn = document.getElementById('export-btn');
+  var clearBtn = document.getElementById('clear-btn');
+  var formMsg = document.getElementById('form-msg');
+  var exportMsg = document.getElementById('export-msg');
+  var clearArmed = false;
+
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function todayISO() {
+    var d = new Date();
+    return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+  }
+  function formatDate(iso) {
+    if (!iso) return '';
+    var p = iso.split('-');
+    if (p.length !== 3) return iso;
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return months[parseInt(p[1], 10) - 1] + ' ' + parseInt(p[2], 10) + ', ' + p[0];
+  }
+  function formatMoney(n) { return '$' + n.toFixed(2); }
+
+  function load() {
+    try {
+      var raw = localStorage.getItem(KEY);
+      var parsed = raw ? JSON.parse(raw) : [];
+      if (Array.isArray(parsed)) {
+        items = parsed.filter(function (i) { return i && typeof i.name === 'string'; });
+        items.forEach(function (i) { if (i.id >= nextId) nextId = i.id + 1; });
+      }
+    } catch (e) { items = []; }
+  }
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(items)); } catch (e) { /* storage blocked: list still works this visit */ }
+  }
+
+  function cell(text, cls) {
+    var td = document.createElement('td');
+    if (cls) td.className = cls;
+    td.textContent = text;
+    return td;
+  }
+
+  function render() {
+    body.textContent = '';
+    var total = 0;
+    var hasPrice = false;
+    items.forEach(function (item) {
+      var tr = document.createElement('tr');
+      tr.appendChild(cell(item.name));
+      tr.appendChild(cell(item.qty));
+      if (item.price !== null) {
+        tr.appendChild(cell(formatMoney(item.price), 'num'));
+        total += item.price;
+        hasPrice = true;
+      } else {
+        tr.appendChild(cell('', 'num'));
+      }
+      tr.appendChild(cell(formatDate(item.date)));
+
+      var actionTd = document.createElement('td');
+      actionTd.className = 'col-act';
+      var del = document.createElement('button');
+      del.type = 'button';
+      del.className = 'del';
+      del.textContent = 'Remove';
+      del.setAttribute('aria-label', 'Remove ' + item.name);
+      del.addEventListener('click', function () {
+        items = items.filter(function (i) { return i.id !== item.id; });
+        save();
+        render();
+      });
+      actionTd.appendChild(del);
+      tr.appendChild(actionTd);
+      body.appendChild(tr);
+    });
+
+    if (hasPrice) {
+      var tfoot = document.createElement('tfoot');
+      var ftr = document.createElement('tr');
+      ftr.className = 'total-row';
+      var label = document.createElement('td');
+      label.colSpan = 2;
+      label.textContent = 'Total (priced items)';
+      ftr.appendChild(label);
+      ftr.appendChild(cell(formatMoney(total), 'num'));
+      ftr.appendChild(cell(''));
+      var blank = document.createElement('td');
+      blank.className = 'col-act';
+      ftr.appendChild(blank);
+      tfoot.appendChild(ftr);
+      body.appendChild(tfoot);
+    }
+
+    emptyNote.hidden = items.length > 0;
+    sheet.querySelector('table').hidden = items.length === 0;
+    sheetDate.textContent = 'Date printed: ' + formatDate(todayISO());
+    exportBtn.disabled = items.length === 0;
+    clearBtn.disabled = items.length === 0;
+  }
+
+  function parsePrice(raw) {
+    var value = String(raw || '').trim();
+    if (value === '') return { ok: true, value: null };
+    var n = parseFloat(value);
+    if (isNaN(n) || n < 0) return { ok: false };
+    return { ok: true, value: Math.round(n * 100) / 100 };
+  }
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    formMsg.textContent = '';
+    var name = nameInput.value.trim();
+    if (!name) {
+      formMsg.textContent = 'Type the item name first.';
+      nameInput.focus();
+      return;
+    }
+    var price = parsePrice(priceInput.value);
+    if (!price.ok) {
+      formMsg.textContent = 'Enter a price as a number, such as 3.49, or leave it empty.';
+      priceInput.focus();
+      return;
+    }
+    items.push({
+      id: nextId++,
+      name: name,
+      qty: qtyInput.value.trim() || '1',
+      price: price.value,
+      date: dateInput.value || todayISO()
+    });
+    save();
+    render();
+    nameInput.value = '';
+    priceInput.value = '';
+    qtyInput.value = '1';
+    nameInput.focus();
+    formMsg.textContent = 'Added. ' + items.length + (items.length === 1 ? ' item' : ' items') + ' on the list.';
+  });
+
+  clearBtn.addEventListener('click', function () {
+    if (!clearArmed) {
+      clearArmed = true;
+      clearBtn.textContent = 'Click again to clear';
+      setTimeout(function () { clearArmed = false; clearBtn.textContent = 'Clear list'; }, 4000);
+      return;
+    }
+    clearArmed = false;
+    clearBtn.textContent = 'Clear list';
+    items = [];
+    save();
+    render();
+    exportMsg.textContent = 'List cleared.';
+  });
+
+  function getDownloads() {
+    try {
+      if (window.claude && typeof window.claude.use === 'function') {
+        return Promise.resolve(window.claude.use('downloads')).then(function (d) { return d || null; }, function () { return null; });
+      }
+    } catch (e) { /* no capability runtime: use the plain link below */ }
+    return Promise.resolve(null);
+  }
+  function saveWithLink(blob, fileName) {
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+  }
+
+  exportBtn.addEventListener('click', function () {
+    exportMsg.textContent = '';
+    if (items.length === 0) {
+      exportMsg.textContent = 'Add at least one item before exporting.';
+      return;
+    }
+    if (typeof window.html2canvas !== 'function') {
+      exportMsg.textContent = 'The image tool did not load. Check your internet connection and try again.';
+      return;
+    }
+    exportBtn.disabled = true;
+    exportMsg.textContent = 'Preparing your JPG...';
+    sheet.classList.add('exporting');
+
+    window.html2canvas(sheet, { backgroundColor: '#FFFFFF', scale: 2 })
+      .then(function (canvas) {
+        return new Promise(function (resolve, reject) {
+          canvas.toBlob(function (blob) {
+            if (blob) resolve(blob); else reject(new Error('no image'));
+          }, 'image/jpeg', 0.92);
+        });
+      })
+      .then(function (blob) {
+        var fileName = 'shopping-list-' + todayISO() + '.jpg';
+        return getDownloads().then(function (dl) {
+          if (dl) {
+            return dl.save({ filename: fileName, data: blob }).then(function () {
+              exportMsg.textContent = 'Saved as ' + fileName + '.';
+            }, function (err) {
+              if (err && err.code === 'declined') {
+                exportMsg.textContent = 'Save cancelled. Export again when you are ready.';
+              } else if (err && err.code === 'rate_limited') {
+                exportMsg.textContent = 'A save is already waiting for an answer. Finish that first.';
+              } else {
+                exportMsg.textContent = 'Saving is not available in this view. Open the page in your web browser to save the JPG.';
+              }
+            });
+          }
+          saveWithLink(blob, fileName);
+          exportMsg.textContent = 'Saved as ' + fileName + '. Check your downloads folder.';
+        });
+      })
+      .catch(function () {
+        exportMsg.textContent = 'The JPG could not be made in this viewer. Open the page in your web browser and try again.';
+      })
+      .then(function () {
+        sheet.classList.remove('exporting');
+        exportBtn.disabled = items.length === 0;
+      });
+  });
+
+  dateInput.value = todayISO();
+  load();
+  render();
+})();
+</script>
+
