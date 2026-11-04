@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resume Studio: 30 Resume Designs, Lifetime Access</title>
+<meta name="description" content="Build a sharp resume in minutes. 30 professional templates, live preview, PDF export. One-time payment of $3.39.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#15150f;--paper:#f4f2ec;--mute:#6b6a60;--line:#d6d3c7;--lime:#c6f432;--card:#ffffff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1.5px solid var(--ink)}
+.brand{font:800 20px Inter,sans-serif;letter-spacing:-.02em;display:flex;align-items:center;gap:8px;text-decoration:none}
+.dot{width:14px;height:14px;background:var(--lime);border:2px solid var(--ink);border-radius:50%}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);padding:14px 24px;border-radius:999px;font:700 16px Inter,sans-serif;text-decoration:none;cursor:pointer;transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--lime)}
+.btn.lime{background:var(--lime);color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.small{padding:9px 16px;font-size:14px}
+
+/* hero */
+.hero{padding:72px 0 48px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.eyebrow{display:inline-block;font:700 12px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;background:var(--lime);border:1.5px solid var(--ink);border-radius:999px;padding:6px 14px;margin-bottom:22px}
+h1{font:800 56px/1.05 Inter,sans-serif;letter-spacing:-.035em;margin:0 0 20px}
+.lead{font-size:19px;color:#3d3d36;margin:0 0 30px;max-width:540px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.fine{font-size:14px;color:var(--mute);margin-top:14px}
+.stack{position:relative;height:420px}
+.sheet{position:absolute;width:230px;height:320px;background:#fff;border:1.5px solid var(--ink);border-radius:10px;box-shadow:8px 8px 0 var(--ink);padding:18px;font-size:11px;line-height:1.5;overflow:hidden}
+.sheet b{display:block;font-size:14px;margin-bottom:4px}
+.sheet .bar{height:6px;background:var(--ink);margin:10px 0;border-radius:3px}
+.s1{left:0;top:40px;transform:rotate(-6deg)}
+.s2{left:120px;top:10px;transform:rotate(4deg);background:var(--lime)}
+.s3{left:60px;top:120px;transform:rotate(-1deg)}
+.s2 .bar,.s1 .bar{background:var(--ink)}
+
+/* hook strip */
+.strip{background:var(--ink);color:var(--paper);border-radius:18px;padding:26px 30px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center}
+.strip b{display:block;font:800 30px Inter,sans-serif;color:var(--lime);letter-spacing:-.02em}
+.strip span{font-size:14px;opacity:.85}
+
+section{padding:72px 0}
+h2{font:800 36px/1.15 Inter,sans-serif;letter-spacing:-.025em;margin:0 0 12px}
+.sub{color:var(--mute);margin:0 0 36px;font-size:17px;max-width:620px}
+
+/* why cards */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{background:var(--card);border:1.5px solid var(--ink);border-radius:16px;padding:26px;box-shadow:5px 5px 0 var(--ink)}
+.card h3{font:700 19px Inter,sans-serif;margin:0 0 8px}
+.card p{margin:0;color:#3d3d36;font-size:15.5px}
+.num{display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border:1.5px solid var(--ink);border-radius:50%;background:var(--lime);font-weight:800;margin-bottom:14px}
+
+/* demo */
+.demo{background:#e6e4da;border:1.5px solid var(--ink);border-radius:20px;padding:28px}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.tab{border:1.5px solid var(--ink);background:#fff;border-radius:999px;padding:9px 18px;font:600 14px Inter,sans-serif;cursor:pointer}
+.tab.on{background:var(--ink);color:var(--paper)}
+.frame{position:relative;max-width:680px;margin:0 auto;background:#fff;border:1.5px solid var(--ink);box-shadow:10px 10px 0 var(--ink);user-select:none;-webkit-user-select:none}
+.frame .demo-sheet{display:none;padding:44px 48px;min-height:520px;font-size:13px;line-height:1.55;color:#18181b}
+.frame .demo-sheet.on{display:block}
+.watermark{position:absolute;inset:0;pointer-events:none;display:flex;align-items:center;justify-content:center;z-index:2}
+.watermark span{transform:rotate(-30deg);font:800 30px Inter,sans-serif;letter-spacing:.08em;color:rgba(21,21,15,.13);white-space:nowrap;text-transform:uppercase}
+.demo-note{text-align:center;margin-top:18px;font-size:15px;color:#3d3d36}
+.demo-sheet .nm{font:800 34px/1.1 Inter,sans-serif;letter-spacing:-.02em;margin:0}
+.demo-sheet .rl{color:#52525b;margin:4px 0 14px}
+.demo-sheet h4{font:700 11px Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;margin:18px 0 8px;padding-bottom:5px;border-bottom:1.5px solid #18181b}
+.demo-sheet .job{display:flex;justify-content:space-between;font-weight:600}
+.demo-sheet .job i{font-style:normal;color:#71717a;font-weight:400}
+.demo-sheet ul{margin:6px 0 0;padding-left:18px}
+/* style 2: sidebar */
+.sb{display:grid;grid-template-columns:200px 1fr;padding:0;min-height:520px}
+.sb .side{background:#17171c;color:#f2f1ec;padding:40px 24px}
+.sb .side h4{color:#c6f432;border-color:#3a3a42}
+.sb .main{padding:40px 36px}
+/* style 3: lime band */
+.band .top-band{background:#c6f432;margin:-44px -48px 26px;padding:40px 48px 26px}
+.band .top-band .nm{font-weight:800;font-size:40px}
+/* style 4: classic serif */
+.serif{font-family:Georgia,serif}
+.serif .head{text-align:center;border-bottom:3px double #1d1d1b;padding-bottom:16px;margin-bottom:6px}
+.serif .head .nm{font:700 34px Georgia,serif;letter-spacing:0}
+.serif h4{font-family:Georgia,serif;text-transform:none;letter-spacing:0;font-size:16px;border-bottom:1px solid #1d1d1b}
+@media print{body{display:none !important}}
+
+/* pricing */
+.price-box{background:var(--card);border:2px solid var(--ink);border-radius:22px;box-shadow:10px 10px 0 var(--lime);padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.price{font:800 72px/1 Inter,sans-serif;letter-spacing:-.04em}
+.price small{font:600 18px Inter,sans-serif;letter-spacing:0;color:var(--mute);margin-left:6px}
+ul.check{list-style:none;padding:0;margin:0}
+ul.check li{padding:7px 0 7px 30px;position:relative;border-bottom:1px dashed var(--line)}
+ul.check li:before{content:"✓";position:absolute;left:0;top:7px;width:20px;height:20px;border-radius:50%;background:var(--lime);border:1.5px solid var(--ink);font-size:12px;font-weight:800;text-align:center;line-height:17px}
+
+/* faq */
+.faq details{background:var(--card);border:1.5px solid var(--ink);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+.faq summary{font-weight:700;cursor:pointer;font-size:17px}
+.faq p{margin:12px 0 0;color:#3d3d36}
+
+/* final cta */
+.final{background:var(--lime);border:2px solid var(--ink);border-radius:24px;padding:56px 40px;text-align:center;box-shadow:10px 10px 0 var(--ink)}
+.final h2{font-size:40px;margin-bottom:14px}
+.final p{font-size:18px;margin:0 auto 26px;max-width:600px}
+
+footer{border-top:1.5px solid var(--ink);padding:26px 0 40px;color:var(--mute);font-size:14px}
+
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;padding-top:44px}
+  .stack{display:none}
+  h1{font-size:40px}
+  .strip{grid-template-columns:repeat(2,1fr)}
+  .cards{grid-template-columns:1fr}
+  .price-box{grid-template-columns:1fr;padding:28px}
+  section{padding:52px 0}
+  h2{font-size:30px}
+  .final{padding:40px 22px}
+  .sb{grid-template-columns:1fr}
+  .sb .side{padding:24px}
+  .frame .demo-sheet{padding:28px 22px}
+  .band .top-band{margin:-28px -22px 20px;padding:28px 22px 20px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#"><span class="dot"></span>Resume Studio</a>
+    <a class="btn small lime" href="https://jamesnobert.gumroad.com/l/resumestudio" target="_blank" rel="noopener">Get it for $3.39</a>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <span class="eyebrow">Lifetime access · One payment</span>
+      <h1>Your next resume, ready in minutes.</h1>
+      <p class="lead">Pick from 30 professional designs, fill in your details step by step, and export a PDF that looks exactly like your preview. Use it for every job you apply to, for as long as you need it.</p>
+      <div class="cta-row">
+        <a class="btn lime" href="https://jamesnobert.gumroad.com/l/resumestudio" target="_blank" rel="noopener">Get Resume Studio for $3.39 →</a>
+        <a class="btn ghost" href="#demo">Try the demo</a>
+      </div>
+      <p class="fine">One-time payment of $3.39. No subscription.</p>
+    </div>
+    <div class="stack" aria-hidden="true">
+      <div class="sheet s1"><b>Alex Morgan</b>Product Designer<div class="bar"></div><b style="font-size:11px">Experience</b>Senior Designer · Northwind<div class="bar"></div>Led onboarding redesign, lifting activation by 24%</div>
+      <div class="sheet s2"><b>Alex Morgan</b>Product Designer<div class="bar"></div>Skills: Figma, research, prototyping<div class="bar"></div>Built a design system used by four squads</div>
+      <div class="sheet s3"><b>Alex Morgan</b>Product Designer<div class="bar"></div><b style="font-size:11px">Projects</b>Open Budget Toolkit<div class="bar"></div>Downloaded 12k times</div>
+    </div>
+  </div>
+
+  <!-- HOOK STRIP -->
+  <div class="strip">
+    <div><b>30</b><span>resume designs</span></div>
+    <div><b>Lifetime</b><span>use, no renewals</span></div>
+    <div><b>More</b><span>styles added over time</span></div>
+    <div><b>$3.39</b><span>one-time price</span></div>
+  </div>
+</div>
+
+<!-- WHY -->
+<section>
+  <div class="wrap">
+    <h2>Why this is the last resume tool you'll need</h2>
+    <p class="sub">Most resume tools lock you into one template, a monthly fee, or a blank box that doesn't tell you what to write. Resume Studio fixes all three.</p>
+    <div class="cards">
+      <div class="card"><span class="num">1</span><h3>Thirty designs, zero design skills</h3><p>From clean layouts that recruiters can scan quickly to bold designs with color bands, sidebars, and timelines. Pick one and your content fits automatically.</p></div>
+      <div class="card"><span class="num">2</span><h3>Never stare at a blank box again</h3><p>Every step has tips and example wording, so you know what a strong achievement looks like before you write yours.</p></div>
+      <div class="card"><span class="num">3</span><h3>See it before you export</h3><p>The live preview shows your full resume as you type, with page breaks marked. The PDF you export matches what you see.</p></div>
+      <div class="card"><span class="num">4</span><h3>Keep your details private</h3><p>Nothing is uploaded to a server. Your information stays in your browser, and you keep a progress file you can reopen anytime.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO -->
+<section id="demo" style="padding-top:0">
+  <div class="wrap">
+    <h2>Try the demo</h2>
+    <p class="sub">Click a style to see how the same sample resume looks in different designs. This demo can't be exported. Buy Resume Studio to fill in your own details and download your PDF.</p>
+    <div class="demo">
+      <div class="tabs" role="tablist">
+        <button class="tab on" data-d="0">Night Sidebar</button>
+        <button class="tab" data-d="1">Lime Band</button>
+        <button class="tab" data-d="2">Classic Serif</button>
+      </div>
+      <div class="frame" oncontextmenu="return false" ondragstart="return false">
+        <div class="watermark"><span>Demo · Not for export</span></div>
+
+        <!-- Demo 1 -->
+        <div class="demo-sheet sb on">
+          <div class="side">
+            <h4>Skills</h4>
+            <div>Figma</div><div>User research</div><div>Prototyping</div><div>Design systems</div>
+            <h4 style="margin-top:24px">Languages</h4>
+            <div>English (Native)</div><div>Spanish (Basic)</div>
+          </div>
+          <div class="main">
+            <p class="nm">Alex Morgan</p>
+            <p class="rl">Product Designer · Austin, TX</p>
+            <h4>Profile</h4>
+            <p>Product designer with six years of experience turning complex data into simple, useful products.</p>
+            <h4>Experience</h4>
+            <div class="job">Senior Product Designer <i>2022 – Present</i></div>
+            <div><i>Northwind · Remote</i></div>
+            <ul><li>Led the onboarding redesign, lifting activation by 24%</li><li>Built a design system used by four product squads</li></ul>
+            <h4>Education</h4>
+            <div class="job">BA, Interaction Design <i>2015 – 2019</i></div>
+          </div>
+        </div>
+
+        <!-- Demo 2 -->
+        <div class="demo-sheet band">
+          <div class="top-band">
+            <p class="nm" style="margin:0">Alex Morgan</p>
+            <p style="margin:4px 0 0">Product Designer · alex@email.com · Austin, TX</p>
+          </div>
+          <h4>Profile</h4>
+          <p>Product designer with six years of experience turning complex data into simple, useful products.</p>
+          <h4>Experience</h4>
+          <div class="job">Senior Product Designer <i>2022 – Present</i></div>
+          <div><i>Northwind · Remote</i></div>
+          <ul><li>Led the onboarding redesign, lifting activation by 24%</li><li>Built a design system used by four product squads</li></ul>
+          <div class="job" style="margin-top:12px">Product Designer <i>2019 – 2022</i></div>
+          <div><i>Lumen Labs · Austin, TX</i></div>
+          <ul><li>Shipped a mobile app used by 200k people each month</li></ul>
+          <h4>Skills</h4>
+          <p>Figma · User research · Prototyping · Design systems · Data storytelling</p>
+        </div>
+
+        <!-- Demo 3 -->
+        <div class="demo-sheet serif">
+          <div class="head">
+            <p class="nm" style="margin:0">Alex Morgan</p>
+            <p style="margin:6px 0 0;color:#52525b">Product Designer · alex@email.com · +1 555 0123 · Austin, TX</p>
+          </div>
+          <h4>Profile</h4>
+          <p>Product designer with six years of experience turning complex data into simple, useful products.</p>
+          <h4>Experience</h4>
+          <div class="job">Senior Product Designer <i>2022 – Present</i></div>
+          <div><i>Northwind · Remote</i></div>
+          <ul><li>Led the onboarding redesign, lifting activation by 24%</li><li>Built a design system used by four product squads</li></ul>
+          <h4>Education</h4>
+          <div class="job">BA, Interaction Design <i>2015 – 2019</i></div>
+          <div><i>State University</i></div>
+        </div>
+      </div>
+      <p class="demo-note">Like what you see? The full version has 30 styles and PDF export. <a href="https://jamesnobert.gumroad.com/l/resumestudio" target="_blank" rel="noopener"><strong>Get it for $3.39</strong></a></p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="price-box">
+      <div>
+        <p style="margin:0;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:13px;color:var(--mute)">Lifetime access</p>
+        <p class="price">$3.39<small>one time</small></p>
+        <p style="margin:14px 0 26px;color:#3d3d36">Pay once and use Resume Studio for every resume you ever need. New styles will be added in future updates.</p>
+        <a class="btn lime" href="https://jamesnobert.gumroad.com/l/resumestudio" target="_blank" rel="noopener" style="width:100%">Get Resume Studio →</a>
+      </div>
+      <ul class="check">
+        <li>30 professional resume designs</li>
+        <li>Step-by-step form with writing tips</li>
+        <li>Live preview with page breaks</li>
+        <li>PDF export that matches your preview</li>
+        <li>Save progress and pick up anytime</li>
+        <li>Import an existing PDF resume</li>
+        <li>Unlimited resumes for yourself</li>
+        <li>Future styles added over time</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 style="margin-bottom:24px">Questions</h2>
+    <div class="faq">
+      <details open><summary>Is this a subscription?</summary><p>No. You pay $3.39 once and keep access. There are no renewals.</p></details>
+      <details><summary>Can I make more than one resume?</summary><p>Yes. Make as many resumes as you need for different jobs, using any of the 30 styles.</p></details>
+      <details><summary>Will I get new styles later?</summary><p>Yes. More styles will be added in future updates, at no extra cost.</p></details>
+      <details><summary>Is my information stored online?</summary><p>No. Resume Studio runs in your browser, and your details stay there. Use Save progress to keep a file you can reopen later.</p></details>
+      <details><summary>Does it work in English only?</summary><p>Yes. Resume Studio is built for English-speaking job seekers.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="final">
+      <h2>Your next application starts with a better resume.</h2>
+      <p>Thirty designs, one payment, and a resume you're proud to send. Build it today and use it for every job you apply to.</p>
+      <a class="btn" href="https://jamesnobert.gumroad.com/l/resumestudio" target="_blank" rel="noopener">Get Resume Studio for $3.39 →</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>© Resume Studio. All rights reserved.</footer>
+</div>
+
+<script>
+/* Demo switcher. Only the chosen sample resume is shown. */
+document.querySelectorAll('.tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const i = btn.dataset.d;
+    document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t === btn));
+    document.querySelectorAll('.demo-sheet').forEach((s, k) => s.classList.toggle('on', k == i));
+  });
+});
+/* Block the usual copy and save shortcuts on the demo. This only deters casual copying. */
+document.addEventListener('keydown', e => {
+  if ((e.ctrlKey || e.metaKey) && ['s','p','u'].includes(e.key.toLowerCase())) e.preventDefault();
+});
+</script>
+</body>
+</html>
